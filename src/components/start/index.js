@@ -13,7 +13,7 @@ export const Index = () => {
         <h1> productos </h1>
       </Link>
 
-      <img src={portada} alt='inicio'></img>
+      {/* aqui va una imagen de fondo */}
     </div>
   )
 }

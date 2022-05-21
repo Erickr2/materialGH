@@ -1,4 +1,7 @@
-import React from 'react' 
+import React, { useContext } from 'react' 
+import { Link } from "react-router-dom";
+import { Datacontext } from "../../context/Dataprovied";
+
 
 export const ProductsItem = ({
             id,
@@ -7,6 +10,10 @@ export const ProductsItem = ({
             image,
             tallas,
 }) => {
+
+
+  const value = useContext(Datacontext);
+  const addCart = value.addCart;
 
   return (
     <div className="product">
@@ -21,7 +28,7 @@ export const ProductsItem = ({
       <p className='price'>${price}</p>
     </div>
     <div className="buttom">
-      <button className="btn">Agregar al carrito</button>
+      <button className="btn" onClick={() => addCart(id)}>Agregar al carrito</button>
       <div>
         <a href="#" className="btn">
           ver
